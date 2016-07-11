@@ -1,0 +1,20 @@
+package com.upsight.android.managedvariables.type;
+
+import com.upsight.android.persistence.UpsightSubscription;
+
+public class UpsightManagedVariable$NoOpSubscription
+  implements UpsightSubscription
+{
+  public boolean isSubscribed()
+  {
+    return false;
+  }
+  
+  public void unsubscribe() {}
+}
+
+/* Location:
+ * Qualified Name:     com.upsight.android.managedvariables.type.UpsightManagedVariable.NoOpSubscription
+ * Java Class Version: 6 (50.0)
+ * JD-Core Version:    0.7.1
+ */
