@@ -1,5 +1,5 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: pokemon.apk
+apkFileName: pogo.apk
 compressionType: false
 doNotCompress:
 - arsc
@@ -36,5 +36,5 @@ usesFramework:
   tag: null
 version: 2.1.1
 versionInfo:
-  versionCode: '2016070500'
-  versionName: 0.29.0
+  versionCode: '2016071201'
+  versionName: 0.29.2

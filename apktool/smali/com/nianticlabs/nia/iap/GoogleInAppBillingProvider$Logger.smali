@@ -24,17 +24,17 @@
     .param p1, "className"    # Ljava/lang/Class;
 
     .prologue
-    .line 42
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
+    .line 45
     invoke-virtual {p1}, Ljava/lang/Class;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$Logger;->tag:Ljava/lang/String;
 
-    .line 44
+    .line 46
     return-void
 .end method
 
@@ -45,14 +45,14 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 71
+    .line 73
     invoke-static {}, Lcom/nianticlabs/nia/contextservice/ContextService;->onServiceThread()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 72
+    .line 74
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    .line 73
+    .line 75
     .local v0, "error":Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -85,7 +85,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$Logger;->severe(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 76
+    .line 78
     .end local v0    # "error":Ljava/lang/String;
     :cond_0
     return-void
@@ -97,7 +97,7 @@
     .param p2, "objects"    # [Ljava/lang/Object;
 
     .prologue
-    .line 65
+    .line 67
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .param p2, "objects"    # [Ljava/lang/Object;
 
     .prologue
-    .line 55
+    .line 57
     return-void
 .end method
 
@@ -117,7 +117,7 @@
     .param p2, "objects"    # [Ljava/lang/Object;
 
     .prologue
-    .line 60
+    .line 62
     return-void
 .end method
 
@@ -127,6 +127,6 @@
     .param p2, "objects"    # [Ljava/lang/Object;
 
     .prologue
-    .line 50
+    .line 52
     return-void
 .end method

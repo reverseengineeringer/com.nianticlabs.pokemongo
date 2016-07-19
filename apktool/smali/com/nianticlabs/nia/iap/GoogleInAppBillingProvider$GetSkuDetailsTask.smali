@@ -47,13 +47,13 @@
     .end annotation
 
     .prologue
-    .line 141
+    .line 143
     .local p2, "skuIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 145
+    .line 147
     # getter for: Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->billingService:Lcom/android/vending/billing/IInAppBillingService;
     invoke-static {p1}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->access$000(Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;)Lcom/android/vending/billing/IInAppBillingService;
 
@@ -61,21 +61,21 @@
 
     iput-object v0, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->billingService:Lcom/android/vending/billing/IInAppBillingService;
 
-    .line 146
+    .line 148
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->requestBundle:Landroid/os/Bundle;
 
-    .line 147
+    .line 149
     iget-object v0, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->requestBundle:Landroid/os/Bundle;
 
     const-string v1, "ITEM_ID_LIST"
 
     invoke-virtual {v0, v1, p2}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 149
+    .line 151
     return-void
 .end method
 
@@ -88,16 +88,16 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 153
+    .line 155
     iget-object v2, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->billingService:Lcom/android/vending/billing/IInAppBillingService;
 
     if-nez v2, :cond_0
 
-    .line 161
+    .line 163
     :goto_0
     return-object v1
 
-    .line 157
+    .line 159
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->billingService:Lcom/android/vending/billing/IInAppBillingService;
@@ -106,7 +106,7 @@
 
     iget-object v4, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
 
-    .line 158
+    .line 160
     # getter for: Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->packageName:Ljava/lang/String;
     invoke-static {v4}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->access$100(Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;)Ljava/lang/String;
 
@@ -116,7 +116,7 @@
 
     iget-object v6, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->requestBundle:Landroid/os/Bundle;
 
-    .line 157
+    .line 159
     invoke-interface {v2, v3, v4, v5, v6}, Lcom/android/vending/billing/IInAppBillingService;->getSkuDetails(ILjava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -125,11 +125,11 @@
 
     goto :goto_0
 
-    .line 159
+    .line 161
     :catch_0
     move-exception v0
 
-    .line 161
+    .line 163
     .local v0, "e":Landroid/os/RemoteException;
     goto :goto_0
 .end method
@@ -138,7 +138,7 @@
     .locals 1
 
     .prologue
-    .line 137
+    .line 139
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->doInBackground([Ljava/lang/Void;)Landroid/os/Bundle;
@@ -153,12 +153,12 @@
     .param p1, "result"    # Landroid/os/Bundle;
 
     .prologue
-    .line 167
+    .line 169
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 169
+    .line 171
     .local v3, "purchasableItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/nianticlabs/nia/iap/PurchasableItemDetails;>;"
     iget-object v5, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
 
@@ -169,10 +169,10 @@
 
     invoke-interface {v5}, Ljava/util/Map;->clear()V
 
-    .line 170
+    .line 172
     if-eqz p1, :cond_1
 
-    .line 171
+    .line 173
     const-string v5, "DETAILS_LIST"
 
     invoke-virtual {p1, v5}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -181,14 +181,14 @@
 
     if-eqz v5, :cond_1
 
-    .line 172
+    .line 174
     const-string v5, "DETAILS_LIST"
 
     invoke-virtual {p1, v5}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v4
 
-    .line 175
+    .line 177
     .local v4, "responseList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -208,26 +208,26 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 177
+    .line 179
     .local v2, "jsonString":Ljava/lang/String;
     invoke-static {v2}, Lcom/nianticlabs/nia/iap/GetSkuDetailsResponseItem;->fromJson(Ljava/lang/String;)Lcom/nianticlabs/nia/iap/GetSkuDetailsResponseItem;
 
     move-result-object v1
 
-    .line 178
+    .line 180
     .local v1, "jsonItem":Lcom/nianticlabs/nia/iap/GetSkuDetailsResponseItem;
     if-eqz v1, :cond_0
 
-    .line 181
+    .line 183
     invoke-static {v1}, Lcom/nianticlabs/nia/iap/GetSkuDetailsResponseItem;->toPurchasableItemDetails(Lcom/nianticlabs/nia/iap/GetSkuDetailsResponseItem;)Lcom/nianticlabs/nia/iap/PurchasableItemDetails;
 
     move-result-object v0
 
-    .line 182
+    .line 184
     .local v0, "item":Lcom/nianticlabs/nia/iap/PurchasableItemDetails;
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 183
+    .line 185
     iget-object v6, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
 
     # getter for: Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->currentPurchasableItems:Ljava/util/Map;
@@ -243,7 +243,7 @@
 
     goto :goto_0
 
-    .line 210
+    .line 212
     .end local v0    # "item":Lcom/nianticlabs/nia/iap/PurchasableItemDetails;
     .end local v1    # "jsonItem":Lcom/nianticlabs/nia/iap/GetSkuDetailsResponseItem;
     .end local v2    # "jsonString":Ljava/lang/String;
@@ -254,7 +254,7 @@
     # invokes: Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->notifyPurchasableItemsResult(Ljava/util/Collection;)V
     invoke-static {v5, v3}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->access$300(Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;Ljava/util/Collection;)V
 
-    .line 211
+    .line 213
     new-instance v5, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ProcessPurchasedItemsTask;
 
     iget-object v6, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
@@ -267,7 +267,7 @@
 
     invoke-virtual {v5, v6}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ProcessPurchasedItemsTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 212
+    .line 214
     return-void
 .end method
 
@@ -275,7 +275,7 @@
     .locals 0
 
     .prologue
-    .line 137
+    .line 139
     check-cast p1, Landroid/os/Bundle;
 
     invoke-virtual {p0, p1}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$GetSkuDetailsTask;->onPostExecute(Landroid/os/Bundle;)V

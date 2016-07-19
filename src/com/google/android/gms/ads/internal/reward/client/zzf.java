@@ -31,12 +31,12 @@ public class zzf
       paramContext = zzb.zza.zzaa(((zzc)zzas(paramContext)).zza(localzzd, paramzzel, 8115000));
       return paramContext;
     }
-    catch (RemoteException paramContext)
+    catch (zzg.zza paramContext)
     {
       com.google.android.gms.ads.internal.util.client.zzb.zzd("Could not get remote RewardedVideoAd.", paramContext);
       return null;
     }
-    catch (zzg.zza paramContext)
+    catch (RemoteException paramContext)
     {
       for (;;) {}
     }

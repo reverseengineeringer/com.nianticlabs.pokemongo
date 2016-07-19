@@ -39,15 +39,15 @@
     .param p2, "purchaseToken"    # Ljava/lang/String;
 
     .prologue
-    .line 223
+    .line 225
     iput-object p1, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ConsumeItemTask;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 224
+    .line 226
     iput-object p2, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ConsumeItemTask;->purchaseToken:Ljava/lang/String;
 
-    .line 227
+    .line 229
     # getter for: Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->billingService:Lcom/android/vending/billing/IInAppBillingService;
     invoke-static {p1}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->access$000(Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;)Lcom/android/vending/billing/IInAppBillingService;
 
@@ -55,7 +55,7 @@
 
     iput-object v0, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ConsumeItemTask;->billingService:Lcom/android/vending/billing/IInAppBillingService;
 
-    .line 228
+    .line 230
     return-void
 .end method
 
@@ -68,16 +68,16 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 232
+    .line 234
     iget-object v2, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ConsumeItemTask;->billingService:Lcom/android/vending/billing/IInAppBillingService;
 
     if-nez v2, :cond_0
 
-    .line 239
+    .line 241
     :goto_0
     return-object v1
 
-    .line 236
+    .line 238
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ConsumeItemTask;->billingService:Lcom/android/vending/billing/IInAppBillingService;
@@ -105,11 +105,11 @@
 
     goto :goto_0
 
-    .line 237
+    .line 239
     :catch_0
     move-exception v0
 
-    .line 239
+    .line 241
     .local v0, "e":Landroid/os/RemoteException;
     goto :goto_0
 .end method
@@ -118,7 +118,7 @@
     .locals 1
 
     .prologue
-    .line 219
+    .line 221
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ConsumeItemTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/Integer;
@@ -133,7 +133,7 @@
     .param p1, "result"    # Ljava/lang/Integer;
 
     .prologue
-    .line 247
+    .line 249
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -142,7 +142,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 249
+    .line 251
     :cond_0
     iget-object v0, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ConsumeItemTask;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
 
@@ -151,11 +151,11 @@
     # invokes: Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->finalizePurchaseResult(Lcom/nianticlabs/nia/iap/PurchaseResult;)V
     invoke-static {v0, v1}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->access$400(Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;Lcom/nianticlabs/nia/iap/PurchaseResult;)V
 
-    .line 254
+    .line 256
     :goto_0
     return-void
 
-    .line 253
+    .line 255
     :cond_1
     iget-object v0, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ConsumeItemTask;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
 
@@ -171,7 +171,7 @@
     .locals 0
 
     .prologue
-    .line 219
+    .line 221
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$ConsumeItemTask;->onPostExecute(Ljava/lang/Integer;)V

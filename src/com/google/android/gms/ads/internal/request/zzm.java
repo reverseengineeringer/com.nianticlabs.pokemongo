@@ -112,7 +112,7 @@ public class zzm
         localHashMap.put("lat", Integer.valueOf(i));
       }
     }
-    catch (GooglePlayServicesRepairableException paramAdRequestInfoParcel)
+    catch (IOException paramAdRequestInfoParcel)
     {
       for (;;)
       {
@@ -142,7 +142,7 @@ public class zzm
     {
       for (;;) {}
     }
-    catch (IOException paramAdRequestInfoParcel)
+    catch (GooglePlayServicesRepairableException paramAdRequestInfoParcel)
     {
       label203:
       for (;;) {}
@@ -213,7 +213,7 @@ public class zzm
           return new AdResponseParcel(-1);
         }
       }
-      catch (InterruptedException paramAdRequestInfoParcel)
+      catch (CancellationException paramAdRequestInfoParcel)
       {
         return new AdResponseParcel(-1);
       }
@@ -235,7 +235,7 @@ public class zzm
         }
         return new AdResponseParcel(3);
       }
-      catch (CancellationException paramAdRequestInfoParcel)
+      catch (InterruptedException paramAdRequestInfoParcel)
       {
         for (;;) {}
       }

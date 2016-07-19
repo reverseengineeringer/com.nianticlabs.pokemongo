@@ -149,7 +149,8 @@ public class GoogleInAppBillingProvider
     };
     Intent localIntent = new Intent("com.android.vending.billing.InAppBillingService.BIND");
     localIntent.setPackage("com.android.vending");
-    if (context.getPackageManager().queryIntentServices(localIntent, 0).isEmpty()) {
+    List localList = context.getPackageManager().queryIntentServices(localIntent, 0);
+    if ((localList == null) || (localList.isEmpty())) {
       finalizeConnectionResult();
     }
     context.bindService(localIntent, serviceConnection, 1);
@@ -579,106 +580,109 @@ public class GoogleInAppBillingProvider
     
     protected Bundle doInBackground(Void... paramVarArgs)
     {
+      if (billingService == null) {
+        return null;
+      }
       Object localObject1 = null;
       paramVarArgs = null;
-      Object localObject6 = null;
-      for (;;)
+      localObject6 = null;
+      localObject4 = localObject1;
+      localObject5 = paramVarArgs;
+      label98:
+      label129:
+      do
       {
-        Object localObject4 = localObject1;
-        Object localObject5 = paramVarArgs;
-        try
+        do
         {
-          Object localObject8 = billingService.getPurchases(3, packageName, "inapp", (String)localObject6);
-          localObject4 = localObject1;
-          localObject5 = paramVarArgs;
-          int i = GoogleInAppBillingProvider.getResponseCodeFromBundle((Bundle)localObject8);
-          localObject4 = localObject1;
-          localObject5 = paramVarArgs;
-          Object localObject3 = ((Bundle)localObject8).getStringArrayList("INAPP_PURCHASE_DATA_LIST");
-          localObject4 = localObject1;
-          localObject5 = paramVarArgs;
-          Object localObject2 = ((Bundle)localObject8).getStringArrayList("INAPP_DATA_SIGNATURE_LIST");
-          Object localObject7;
-          if (i == 5)
+          do
           {
-            localObject6 = localObject1;
-            localObject7 = paramVarArgs;
-          }
-          else
-          {
-            localObject6 = localObject1;
-            localObject7 = paramVarArgs;
-            if (i == 0)
+            do
             {
-              localObject4 = localObject1;
-              localObject5 = paramVarArgs;
-              localObject6 = localObject1;
-              localObject7 = paramVarArgs;
-              if (((Bundle)localObject8).containsKey("INAPP_PURCHASE_DATA_LIST"))
+              try
               {
+                localObject8 = billingService.getPurchases(3, packageName, "inapp", (String)localObject6);
                 localObject4 = localObject1;
                 localObject5 = paramVarArgs;
-                localObject6 = localObject1;
+                i = GoogleInAppBillingProvider.getResponseCodeFromBundle((Bundle)localObject8);
+                localObject4 = localObject1;
+                localObject5 = paramVarArgs;
+                localObject3 = ((Bundle)localObject8).getStringArrayList("INAPP_PURCHASE_DATA_LIST");
+                localObject4 = localObject1;
+                localObject5 = paramVarArgs;
+                localObject2 = ((Bundle)localObject8).getStringArrayList("INAPP_DATA_SIGNATURE_LIST");
+                if (i != 5) {
+                  break label129;
+                }
                 localObject7 = paramVarArgs;
-                if (((Bundle)localObject8).containsKey("INAPP_DATA_SIGNATURE_LIST"))
+                localObject6 = localObject1;
+              }
+              catch (RemoteException paramVarArgs)
+              {
+                for (;;)
                 {
-                  localObject4 = localObject1;
-                  localObject5 = paramVarArgs;
-                  localObject6 = localObject1;
-                  localObject7 = paramVarArgs;
-                  if (((ArrayList)localObject3).size() == ((ArrayList)localObject2).size())
-                  {
-                    if (localObject1 == null) {}
-                    for (;;)
-                    {
-                      localObject4 = localObject3;
-                      localObject5 = localObject2;
-                      localObject8 = ((Bundle)localObject8).getString("INAPP_CONTINUATION_TOKEN");
-                      localObject6 = localObject3;
-                      localObject7 = localObject2;
-                      if (localObject8 == null) {
-                        break label315;
-                      }
-                      localObject1 = localObject3;
-                      paramVarArgs = (Void[])localObject2;
-                      localObject6 = localObject8;
-                      localObject4 = localObject3;
-                      localObject5 = localObject2;
-                      if (((String)localObject8).length() != 0) {
-                        break;
-                      }
-                      localObject6 = localObject3;
-                      localObject7 = localObject2;
-                      break label315;
-                      localObject4 = localObject1;
-                      localObject5 = paramVarArgs;
-                      ((ArrayList)localObject1).addAll((Collection)localObject3);
-                      localObject4 = localObject1;
-                      localObject5 = paramVarArgs;
-                      paramVarArgs.addAll((Collection)localObject2);
-                      localObject3 = localObject1;
-                      localObject2 = paramVarArgs;
-                    }
-                  }
+                  Object localObject8;
+                  int i;
+                  Object localObject3;
+                  Object localObject2;
+                  localObject6 = localObject4;
+                  Object localObject7 = localObject5;
                 }
               }
-            }
-          }
-          label315:
-          return null;
+              if (localObject6 == null) {
+                break;
+              }
+              paramVarArgs = new Bundle();
+              paramVarArgs.putStringArrayList("INAPP_PURCHASE_DATA_LIST", (ArrayList)localObject6);
+              paramVarArgs.putStringArrayList("INAPP_DATA_SIGNATURE_LIST", (ArrayList)localObject7);
+              return paramVarArgs;
+              localObject6 = localObject1;
+              localObject7 = paramVarArgs;
+            } while (i != 0);
+            localObject6 = localObject1;
+            localObject7 = paramVarArgs;
+            localObject4 = localObject1;
+            localObject5 = paramVarArgs;
+          } while (!((Bundle)localObject8).containsKey("INAPP_PURCHASE_DATA_LIST"));
+          localObject6 = localObject1;
+          localObject7 = paramVarArgs;
+          localObject4 = localObject1;
+          localObject5 = paramVarArgs;
+        } while (!((Bundle)localObject8).containsKey("INAPP_DATA_SIGNATURE_LIST"));
+        localObject6 = localObject1;
+        localObject7 = paramVarArgs;
+        localObject4 = localObject1;
+        localObject5 = paramVarArgs;
+      } while (((ArrayList)localObject3).size() != ((ArrayList)localObject2).size());
+      if (localObject1 == null) {}
+      for (;;)
+      {
+        localObject4 = localObject3;
+        localObject5 = localObject2;
+        localObject8 = ((Bundle)localObject8).getString("INAPP_CONTINUATION_TOKEN");
+        localObject6 = localObject3;
+        localObject7 = localObject2;
+        if (localObject8 == null) {
+          break label98;
         }
-        catch (RemoteException paramVarArgs)
-        {
-          localObject6 = localObject4;
-          localObject7 = localObject5;
-          while (localObject6 != null)
-          {
-            paramVarArgs = new Bundle();
-            paramVarArgs.putStringArrayList("INAPP_PURCHASE_DATA_LIST", (ArrayList)localObject6);
-            paramVarArgs.putStringArrayList("INAPP_DATA_SIGNATURE_LIST", (ArrayList)localObject7);
-            return paramVarArgs;
-          }
+        localObject1 = localObject3;
+        paramVarArgs = (Void[])localObject2;
+        localObject6 = localObject8;
+        localObject4 = localObject3;
+        localObject5 = localObject2;
+        if (((String)localObject8).length() != 0) {
+          break;
         }
+        localObject6 = localObject3;
+        localObject7 = localObject2;
+        break label98;
+        localObject4 = localObject1;
+        localObject5 = paramVarArgs;
+        ((ArrayList)localObject1).addAll((Collection)localObject3);
+        localObject4 = localObject1;
+        localObject5 = paramVarArgs;
+        paramVarArgs.addAll((Collection)localObject2);
+        localObject3 = localObject1;
+        localObject2 = paramVarArgs;
       }
     }
     

@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$1;
 
     .prologue
-    .line 458
+    .line 463
     iput-object p1, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$1$2;->this$1:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 462
+    .line 467
     iget-object v0, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$1$2;->this$1:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$1;
 
     iget-object v0, v0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$1;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
@@ -51,7 +51,7 @@
     # setter for: Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->billingService:Lcom/android/vending/billing/IInAppBillingService;
     invoke-static {v0, v1}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->access$002(Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;Lcom/android/vending/billing/IInAppBillingService;)Lcom/android/vending/billing/IInAppBillingService;
 
-    .line 463
+    .line 468
     iget-object v0, p0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$1$2;->this$1:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$1;
 
     iget-object v0, v0, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider$1;->this$0:Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;
@@ -59,6 +59,6 @@
     # invokes: Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->finalizeConnectionResult()V
     invoke-static {v0}, Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;->access$800(Lcom/nianticlabs/nia/iap/GoogleInAppBillingProvider;)V
 
-    .line 464
+    .line 469
     return-void
 .end method

@@ -47,11 +47,11 @@ class BouncySignatureVerifier
       mLogger.e("Upsight", paramUpsightContext, "Failed to initialize " + BouncySignatureVerifier.class.getSimpleName(), new Object[0]);
       return;
     }
-    catch (NoSuchProviderException paramUpsightContext)
+    catch (NoSuchAlgorithmException paramUpsightContext)
     {
       for (;;) {}
     }
-    catch (NoSuchAlgorithmException paramUpsightContext)
+    catch (NoSuchProviderException paramUpsightContext)
     {
       for (;;) {}
     }

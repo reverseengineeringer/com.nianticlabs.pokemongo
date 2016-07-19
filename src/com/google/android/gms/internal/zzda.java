@@ -31,12 +31,12 @@ public class zzda
       paramContext = zzco.zza.zzu(((zzcp)zzas(paramContext)).zza(localzzd, paramFrameLayout1, paramFrameLayout2, 8115000));
       return paramContext;
     }
-    catch (RemoteException paramContext)
+    catch (zzg.zza paramContext)
     {
       zzb.zzd("Could not create remote NativeAdViewDelegate.", paramContext);
       return null;
     }
-    catch (zzg.zza paramContext)
+    catch (RemoteException paramContext)
     {
       for (;;) {}
     }

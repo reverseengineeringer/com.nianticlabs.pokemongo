@@ -30,12 +30,12 @@ public class zze
       paramContext = zzs.zza.zzk(((zzt)zzas(paramContext)).zza(localzzd, paramAdSizeParcel, paramString, paramzzel, 8115000, paramInt));
       return paramContext;
     }
-    catch (RemoteException paramContext)
+    catch (zzg.zza paramContext)
     {
       zzb.zza("Could not create remote AdManager.", paramContext);
       return null;
     }
-    catch (zzg.zza paramContext)
+    catch (RemoteException paramContext)
     {
       for (;;) {}
     }
