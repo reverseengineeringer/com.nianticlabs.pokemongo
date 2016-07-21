@@ -33,17 +33,17 @@ class BundleCompatDonut
           paramBundle = (IBinder)sGetIBinderMethod.invoke(paramBundle, new Object[] { paramString });
           return paramBundle;
         }
-        catch (IllegalArgumentException paramBundle)
+        catch (IllegalAccessException paramBundle)
         {
           Log.i("BundleCompatDonut", "Failed to invoke getIBinder via reflection", paramBundle);
           sGetIBinderMethod = null;
           return null;
         }
-        catch (InvocationTargetException paramBundle)
+        catch (IllegalArgumentException paramBundle)
         {
           continue;
         }
-        catch (IllegalAccessException paramBundle)
+        catch (InvocationTargetException paramBundle)
         {
           continue;
         }
@@ -72,17 +72,17 @@ class BundleCompatDonut
           sPutIBinderMethod.invoke(paramBundle, new Object[] { paramString, paramIBinder });
           return;
         }
-        catch (IllegalArgumentException paramBundle)
+        catch (IllegalAccessException paramBundle)
         {
           Log.i("BundleCompatDonut", "Failed to invoke putIBinder via reflection", paramBundle);
           sPutIBinderMethod = null;
           return;
         }
-        catch (InvocationTargetException paramBundle)
+        catch (IllegalArgumentException paramBundle)
         {
           continue;
         }
-        catch (IllegalAccessException paramBundle)
+        catch (InvocationTargetException paramBundle)
         {
           continue;
         }

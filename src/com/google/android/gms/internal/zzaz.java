@@ -496,12 +496,12 @@ public class zzaz
           zzb.zza("Active view update failed.", localzzhs);
         }
       }
-      catch (RuntimeException localRuntimeException)
+      catch (JSONException localJSONException)
       {
         for (;;) {}
         i = 1;
       }
-      catch (JSONException localJSONException)
+      catch (RuntimeException localRuntimeException)
       {
         label139:
         for (;;) {}

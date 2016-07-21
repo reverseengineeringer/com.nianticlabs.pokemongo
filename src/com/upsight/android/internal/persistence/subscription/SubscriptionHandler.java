@@ -27,11 +27,11 @@ class SubscriptionHandler
       mMethod.invoke(mTarget, new Object[] { source });
       return;
     }
-    catch (InvocationTargetException paramDataStoreEvent)
+    catch (IllegalAccessException paramDataStoreEvent)
     {
       throw new UpsightException(paramDataStoreEvent, "Failed to invoke subscription method %s.%s: ", new Object[] { mTarget.getClass(), mMethod.getName() });
     }
-    catch (IllegalAccessException paramDataStoreEvent)
+    catch (InvocationTargetException paramDataStoreEvent)
     {
       for (;;) {}
     }
